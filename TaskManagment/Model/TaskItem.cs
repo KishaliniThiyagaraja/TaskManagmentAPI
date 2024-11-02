@@ -4,6 +4,8 @@ namespace TaskManagment.Model
 {
     public class TaskItem
     {
+    
+
         [Key]
         public int Id { get; set; }
 
@@ -11,9 +13,13 @@ namespace TaskManagment.Model
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTime DueDate { get; set; }
+        [Required]
         public string Priority { get; set; }
 
+        public User? Assignee { get; set; }
 
+        public ICollection<CheckList>? CheckLists { get; set; }
+        public int AssigneeId { get; set; }
 
 
     }
