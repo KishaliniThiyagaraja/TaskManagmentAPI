@@ -15,10 +15,9 @@ namespace TaskManagment.Data
         }
         public DbSet<TaskItem> Task { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Login> logins { get; set; }
 
-        public DbSet<Address> Addresses { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+               protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
                 .HasMany(u => u.TaskItems)
